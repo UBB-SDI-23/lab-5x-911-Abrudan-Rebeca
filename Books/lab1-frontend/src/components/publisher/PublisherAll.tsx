@@ -84,7 +84,7 @@ export const PublisherAll = () => {
                                     <TableCell align="right">{publisher.year}</TableCell>
 									<TableCell component="th" scope="row">
 										<Link to={`/publisher/${publisher.id}/details`} title="View owner details">
-											{publisher.owner_name}
+											{publisher.publisher}
 										</Link>
 									</TableCell>
 									<TableCell align="right">{publisher.format}</TableCell>
