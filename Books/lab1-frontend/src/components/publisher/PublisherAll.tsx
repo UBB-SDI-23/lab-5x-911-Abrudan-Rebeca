@@ -80,13 +80,14 @@ export const PublisherAll = () => {
 									<TableCell component="th" scope="row">
 										{index + 1}
 									</TableCell>
-                                    <TableCell align="right">{publisher.publisher}</TableCell>
-                                    <TableCell align="right">{publisher.year}</TableCell>
 									<TableCell component="th" scope="row">
-										<Link to={`/publisher/${publisher.id}/details`} title="View owner details">
+										<Link to={`/publisher/${publisher.id}/details`} title="View publisher details">
 											{publisher.publisher}
 										</Link>
 									</TableCell>
+                                    <TableCell align="right">{publisher.year}</TableCell>
+									
+                                    <TableCell align="right">{publisher.owner_name}</TableCell>
 									<TableCell align="right">{publisher.format}</TableCell>
 									<TableCell align="right">{publisher.country}</TableCell>
                                     
