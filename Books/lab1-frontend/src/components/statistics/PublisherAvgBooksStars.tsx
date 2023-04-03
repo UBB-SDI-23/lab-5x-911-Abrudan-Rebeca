@@ -11,6 +11,8 @@ import {
 	IconButton,
 	Tooltip,
 } from "@mui/material";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Link } from "react-router-dom";
 import { Publisher } from "../../models/Publisher";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
@@ -23,25 +25,26 @@ import axios from "axios";
 
 interface Statistic {
 	id: number;
-	Publisher: string;
+	publisher: string;
 	avg_stars: number;
 	book_count: number;
   }
 export const PublisherAvgBooksStars = () => {
     const [statistics, setStatistics] = useState<Statistic[]>([]);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-	setLoading(true);
-	axios.get(`${GlobalURL}/publisher/statistics/`)
-	  .then(response => {
-		setStatistics(response.data);
-		setLoading(false);
-	  })
-	  .catch(error => {
-		console.error(error);
-		setLoading(false);
-	  });
-  }, []);
+    const [loading, setLoading] = useState(false);
+ 
+	useEffect(() => {
+		setLoading(true);
+		axios.get(`${GlobalURL}/publisher/statistics/`)
+		.then(response => {
+			setStatistics(response.data);
+			setLoading(false);
+		})
+		.catch(error => {
+			console.error(error);
+			setLoading(false);
+		});
+    }, []);
 
   return (
 	<Container>
@@ -67,7 +70,7 @@ export const PublisherAvgBooksStars = () => {
 				{statistics.map((statistic, index) => (
 					<TableRow key={statistic.id}>
 						<TableCell>{index + 1}</TableCell>
-						<TableCell>{statistic.Publisher}</TableCell>
+						<TableCell>{statistic.publisher}</TableCell>
 						<TableCell align="right">{statistic.avg_stars}</TableCell>
 						<TableCell align="right">{statistic.book_count}</TableCell>
 					</TableRow>
