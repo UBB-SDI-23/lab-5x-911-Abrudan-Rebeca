@@ -74,14 +74,14 @@ export const PublisherAvgBooksStars = () => {
             <TableHead>
               <TableRow>
                 <TableCell>#</TableCell>
-                <TableCell>CarBrand</TableCell>
+                <TableCell>Publisher</TableCell>
                 <TableCell align="right">
                   <Tooltip title="Sort by Average Stars" arrow>
                     <IconButton onClick={handleSortOrderChange}>
                       {sortOrder === 'asc' ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />}
                     </IconButton>
                   </Tooltip>
-                  Avg_Production_Year
+                  Avg_Stars
                 </TableCell>
                 <TableCell align="right">Book_Count</TableCell>
               </TableRow>
