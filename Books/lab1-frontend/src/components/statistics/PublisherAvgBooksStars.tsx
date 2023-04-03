@@ -83,7 +83,7 @@ export const PublisherAvgBooksStars = () => {
                   </Tooltip>
                   Avg_Production_Year
                 </TableCell>
-                <TableCell align="right">Car_Count</TableCell>
+                <TableCell align="right">Book_Count</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
